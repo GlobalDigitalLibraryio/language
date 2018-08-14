@@ -1,23 +1,17 @@
 language: scala
 scala:
-  - 2.12.2
-  - 2.11.8
+- 2.12.2
+- 2.11.8
 jdk:
-  - oraclejdk8
-# Use container-based infrastructure
+- oraclejdk8
 sudo: false
-# These directories are cached to S3 at the end of the build
 cache:
   directories:
-    - $HOME/.ivy2/cache
-    - $HOME/.sbt/boot/
+  - "$HOME/.ivy2/cache"
+  - "$HOME/.sbt/boot/"
 before_cache:
-  # Tricks to avoid unnecessary cache updates
-  - find $HOME/.ivy2 -name "ivydata-*.properties" -delete
-  - find $HOME/.sbt -name "*.lock" -delete
+- find $HOME/.ivy2 -name "ivydata-*.properties" -delete
+- find $HOME/.sbt -name "*.lock" -delete
 notifications:
   slack:
-    on_success: change
-    on_failure: always
-    rooms:
-      secure: sVduoWiBrb9AuXacKTTbQRD4y+LYlN7qTl9IZ235gLOryRhGaQaRZ04TvUJ0SV16fktGgNhQlUalJgrTCmdaR8Xh73o2/mmP3GFWyMXZamZ/4gNng6wuJgow2GKj6Ff3bSiyf8afPe2SuZ+rWLiptPTDqny6scpKban6OrBUOilGiqASgcvDN+CWicfj7HsXv5PqOgySW1lWoGzf+Ly8Gsuz8aOWz109m9EhUVTM4zvnbHudeiYxULQFSq2sfDZOEfttOZ5LE10aedSD583K11SL9f8Scw2UWi1cbhDuCI4MW+FvlLE7XFUNwuhPNUjJ0l/WGJcbRqMmN3FE/NTECqEvjz2DV1+kmGEDzEUg2i53IBq7l3CJF5zH71H3J9aUqMubrKJZa3L12+f7tm0OsBXMJIi25/D912+pUwtz4FxCRBNiamWbB+IC1VagdF0wLCACDm0AaB1d2Jm4J3IG7gQX82C8SqNAcKxZ1N/YfGteaHN1yWcXXjJSOpMqkXsL0NAU1VZz4lSM9Qks+/h7FogaZjNegLHknGfbnyHJPg5R6zk8i/h1omRrFjKVfm/ObUIGxjDiXWMq7CEcSZjUBTrf2MiZDxUbS9wA+BzOptLONf3tMoCZKqgMqLymSWkJK9Pmz1DRO38McbhcW8au+9jyTgiZyum7Jmes/RiZCdM=
+    secure: GBYBKXU+zIYdRDRZPoWREW0PubZWmZZSiQxWehP6rg/m02vv7bq1MNaTk4fZHc59VkisnVWLbtSW2kqdJup58Uw19OdgoqC50A/eeARL+dRH6LXmcmTco423T2kxj8n0FsIa0JnOSiqNCDlo0hXhabTx8hzmxK5V2STWM+jUqJ+193vEXIqKG+VNGmvXt6L71NGWWLuoFhcfVWzWuHynPWHGkBBh+TKaPELmTJRp9wYUkklJY+SUGV/Xv5NjzP3BMO5z4948J9hXhsuVmwSYkMPju8jmX5rCZvIUjoJiO4dvO7k9XiyH2HDzJa+pI8Lj7Td6OnahOEnFwMBTfh9+F+neGnhVaj0eMO6evx17CuyOo6PaLs5bO3m/hMKIOgM/VEKeMZ+g8dnmB/V5qrvmYXzFxit00ZnTYGHD8WauK/8SAUGSi0XxcO3qAtl2EeL8sJZN6BpUOsN/kmfv7z4/EU4s9u/6TDs6KPpeburlq87jAglSudVjQUOWmIwmbQPjD9e0zBXA9tUUbu9fYxKatCVSsYvzHAg3rWAmH/TxvZ+TcqxyDuBi/kYQm1dp2f47Irl8m69DgOUIIRSxz81rOwwBfjJ5Wmrg5qbfPVVdsn6i6mxa41EFSsvaHvSVQ4N0uZQObT6Af4s+sGrt6ZjA6esXdDPB5Keoli9MMcRwLO8=
